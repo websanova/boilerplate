@@ -2,7 +2,7 @@
 
 A jQuery plugin development boilerplate.
 
-* [Boilerplate Article](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
+* [Boilerplate Article (with comments)](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
 * [10 Coding Tips to Write Superior jQuery Plugins](http://www.websanova.com/tutorials/jquery/10-coding-tips-to-write-superior-jquery-plugins)
 
 This is a great starting point for developing jQuery plugins small and large taking care of many scenarios you will encounter throughtout your plugins lifecycle.
