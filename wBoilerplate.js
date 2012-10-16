@@ -8,7 +8,7 @@
  * @license         This websanova jQuery boilerplate is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/boilerplate
- * @version			1.2.0
+ * @version			1.2.1
  *
  ******************************************/
 
@@ -87,13 +87,19 @@
 
 			$this.boiler = $('<div class="_wBoiler_holder"></div>');
 
-			$this.boiler.click(function()
+			$this.boiler
+			.click(function()
 			{
 				$this.boiler.html('you clicked me!');
 
 				if($this.settings.onClick) $this.settings.onClick.apply($this, []);
+			})
+			.mousedown(function() //works on mobile too
+			{
+				$this.boiler.html('you mouse downed me!');
 			});
 
+			$this.bindMobile($this.boiler);
 			$this.setTheme($this.settings.theme);
 			$this.reset();
 
@@ -109,6 +115,28 @@
 		reset: function()
 		{
 			this.boiler.html('click me');
+		},
+
+		bindMobile: function($el)
+		{
+			$el.bind('touchstart touchmove touchend touchcancel', function ()
+			{
+				var touches = event.changedTouches, first = touches[0], type = ""; 
+
+				switch (event.type)
+				{
+					case "touchstart": type = "mousedown"; break; 
+					case "touchmove": type = "mousemove"; break; 
+					case "touchend": type = "mouseup"; break; 
+					default: return;
+				}
+
+				var simulatedEvent = document.createEvent("MouseEvent"); 
+
+				simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY, false, false, false, false, 0/*left*/, null);
+				first.target.dispatchEvent(simulatedEvent);
+				//event.preventDefault(); //if you don't want to disable click uncomment this
+			});
 		}
 	}
 })(jQuery);
