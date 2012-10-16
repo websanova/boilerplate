@@ -1,0 +1,13 @@
+/*********************************************
+ * Layout
+ *********************************************/
+._wBoiler_holder{display:inline-block; border:solid black 1px; padding:20px;}
+
+/*********************************************
+ * Themes
+ *********************************************/
+ ._wBoiler_red{border-color:#CE6F6F; background-color:#F79992; color:#9C2F2F;}
+ ._wBoiler_green{border-color:#A9DB66; background-color:#CDE6AC; color:#58792E;}
+ ._wBoiler_blue{border-color:#ADD9ED; background-color:#E5F6FE; color:#4D9FBF;}
+
+

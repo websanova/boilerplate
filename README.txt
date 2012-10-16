@@ -1,1 +1,0 @@
-Documentation can be found at: http://www.websanova.com/plugins/websanova/boilerplate

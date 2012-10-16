@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+
 	<title>Websanova jQuery Plugin Development Boilerplate</title>
 
 	<script type="text/javascript" src="./inc/jquery.1.7.1.min.js"></script>
+
+	<link rel="Stylesheet" type="text/css" href="./wBoilerplate.css" />
 	<script type="text/javascript" src="./wBoilerplate.js"></script>
-	
 </head>
 <body>
 
-	<!-------------------------------------------->
-	<!-- postJSON
-	<!-------------------------------------------->
-	<div class="function">Overwrite Default Settings</div>
-	<div class="sample">
-		<div id="boiler"></div>
+	<h1>Websanova jQuery Plugin Development Boilerplate</h1>
 
-		<script type="text/javascript">
-			$.fn.wBoiler.defaultSettings.color = "white";
-			
-			$("#boiler").wBoiler();
-		</script>
-	</div>
+	<div id="test">some element</div>
+
+	<input type="button" value="Reset" onclick="$('#test').wBoiler('reset');"/>
+
+	<input type="button" value="Red" onclick="$('#test').wBoiler('theme', 'red');"/>
+	<input type="button" value="Green" onclick="$('#test').wBoiler('theme', 'green');"/>
+	<input type="button" value="Blue" onclick="$('#test').wBoiler('theme', 'blue');"/>
+
+	<script type="text/javascript">
+		$('#test').wBoiler({
+			theme: 'green',
+			onClick: function()
+			{
+				this.boiler.append(' ...callback');
+			}
+		});
+	</script>
 </body>
 </html>
 
