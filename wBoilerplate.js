@@ -8,7 +8,7 @@
  * @license         This websanova jQuery boilerplate is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/boilerplate
- * @version			1.2.1
+ * @version			1.2.2
  *
  ******************************************/
 
@@ -45,13 +45,11 @@
 			else { return elements; }
 		}
 
-		settings = $.extend({}, $.fn.wBoiler.defaultSettings, settings || {});
-
 		return this.each(function()
 		{
 			var $elem = $(this);
 
-			var $settings = jQuery.extend(true, {}, settings);
+			var $settings = $.extend({}, $.fn.wBoiler.defaultSettings, settings || {});
 
 			var boiler = new Boiler($settings, $elem);
 
