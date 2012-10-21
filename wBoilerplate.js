@@ -8,7 +8,7 @@
  * @license         This websanova jQuery boilerplate is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/boilerplate
- * @version			1.2.2
+ * @version			1.2.3
  *
  ******************************************/
 
@@ -115,7 +115,7 @@
 			this.boiler.html('click me');
 		},
 
-		bindMobile: function($el)
+		bindMobile: function($el, preventDefault)
 		{
 			$el.bind('touchstart touchmove touchend touchcancel', function ()
 			{
@@ -133,7 +133,8 @@
 
 				simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY, false, false, false, false, 0/*left*/, null);
 				first.target.dispatchEvent(simulatedEvent);
-				//event.preventDefault(); //if you don't want to disable click uncomment this
+				
+				if(preventDefault) { event.preventDefault(); }
 			});
 		}
 	}
